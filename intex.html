@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="text" id="search">
+        
+        <button onclick="btnfunc()">search</button>
+        <span id="msg"></span>
+
+    </center>
+  
+</body>
+<script>
+    let laptop=[{lname:"hp", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+                {lname:"hp", processor:"i2",warranty:2,window:10,generation:"7th",price:30000},
+                {lname:"hp",processor:"i2",warranty:1, window:7, generation:"7th",price:28000},
+                {lname:"hp",processor:"i4",warranty:1,window:11,generation:"10th",price:35000},
+                {lname:"hp", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+
+                {lname:"dell", processor:"i3",warranty:2,window:10,generation:"7th",price:30000},
+                {lname:"dell",processor:"i4",warranty:1, window:10, generation:"10th",price:48000},
+                {lname:"dell",processor:"i4",warranty:1,window:11,generation:"10th",price:45000},
+                {lname:"dell", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+                {lname:"dell", processor:"i5",warranty:2,window:10,generation:"7th",price:30000},
+
+                {lname:"acer",processor:"i4",warranty:1, window:7, generation:"10th",price:33000},
+                {lname:"acer",processor:"i4",warranty:1,window:11,generation:"10th",price:35000},
+                {lname:"acer", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+                {lname:"acer", processor:"i2",warranty:2,window:10,generation:"7th",price:30000},
+                {lname:"acer",processor:"i3",warranty:1, window:7, generation:"7th",price:28000},
+
+                {lname:"mac",processor:"i4",warranty:1,window:11,generation:"10th",price:135000},
+                {lname:"mac", processor:"i3",warranty:1,window:10,generation:"6th",price:132000},
+                {lname:"mac", processor:"i2",warranty:2,window:10,generation:"7th",price:10000},
+                {lname:"mac",processor:"i2",warranty:1, window:7, generation:"7th",price:128000},
+                {lname:"mac",processor:"i4",warranty:3,window:11,generation:"11th",price:125000},
+
+                {lname:"lenovo", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+                {lname:"lenovo", processor:"i2",warranty:2,window:10,generation:"7th",price:30000},
+                {lname:"lenovo",processor:"i2",warranty:1, window:7, generation:"7th",price:28000},
+                {lname:"lenovo",processor:"i4",warranty:1,window:11,generation:"10th",price:35000},
+                {lname:"lenovo", processor:"i3",warranty:1,window:10,generation:"6th",price:32000},
+                ]
+
+                function btnfunc(){
+                    let tbl=`<table border='3' width="50"<tr><th>LNAME</th><th>processor</th><th>warranty</th><th>window</th><th>genration</th><th>price</th></tr>`
+
+                    let searchvalue=document.getElementById("search").value
+                    let filterdata=laptop.filter(function(getvalue){
+                        if(searchvalue==getvalue.lname)
+                        return getvalue.lname==searchvalue
+                        if(searchvalue==getvalue.processor)
+                        return getvalue.processor==searchvalue
+                        if(searchvalue==getvalue.warranty)
+                        return getvalue.warranty==searchvalue
+                        if(searchvalue==getvalue.window)
+                        return getvalue.window==searchvalue
+                        if(searchvalue==getvalue.generation)
+                        return getvalue.generation==searchvalue
+                        if(searchvalue==getvalue.price)
+                        return getvalue.price==searchvalue
+
+                    })
+                    filterdata.forEach(function(x){
+                        tbl+=`<tr><th>${x.lname}</th><th>${x.processor}</th><th>${x.warranty}</th><th>${x.window}</th><th>${x.generation}</th><th>${x.price}</tr>`
+
+
+                    })
+                    document.getElementById("msg").innerHTML=tbl
+                }
+                    
+                    
+                
+</script>
+</html
+
+
